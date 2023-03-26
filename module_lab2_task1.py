@@ -1,4 +1,6 @@
 import numpy as np
+import math
+import zipfile
 
 # additional imports here
 
@@ -32,17 +34,27 @@ class LUSolver(object):
             self.vector_b = np.array(b)
 
     def lu_factors(self):
-        n = self.matrix_a.size
+        n = math.sqrt(self.matrix_a.size)
+        n = int(n)
         self.matrix_l = np.eye(n)
 
         self.matrix_u = self.matrix_a
 
         # Reduce the matrices
-        for r in range(0, n-2):
-            for i in range(1, n-1):
-                for j in range(0, n):
-                    self.matrix_u[i][j+r] = self.matrix_u[i][j+r] - (self.matrix_u[i][j+r]/self.matrix_u[i-1][j+r])*self.matrix_u[i-1][j+r]
-                    self.matrix_l[i][j+r] = self.matrix_l[i][j+r] - (self.matrix_u[i][j+r]/self.matrix_u[i-1][j+r])*self.matrix_l[i-1][j+r]
+        for r in range(1, n):
+            m = r
+            for i in range(m, n):
+                multiplier = self.matrix_u[i][r-1] / self.matrix_u[m-1][r-1]
+                self.matrix_l[i][r-1] = multiplier
+                for j in range(m-1, n):
+                    self.matrix_u[i][j] = self.matrix_u[i][j] - multiplier*self.matrix_u[m-1][j]
 
+        # Tests
+        # print(self.matrix_u)
+        # print(self.matrix_l)
 
+# For testing
+# A = LUSolver()
+# A.read_system_from_file(file_path='problem27.txt')
+# A.lu_factors()
 
