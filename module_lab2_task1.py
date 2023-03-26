@@ -43,3 +43,6 @@ class LUSolver(object):
                 for j in range(0, n):
                     self.matrix_u[i][j+r] = self.matrix_u[i][j+r] - (self.matrix_u[i][j+r]/self.matrix_u[i-1][j+r])*self.matrix_u[i-1][j+r]
                     self.matrix_l[i][j+r] = self.matrix_l[i][j+r] - (self.matrix_u[i][j+r]/self.matrix_u[i-1][j+r])*self.matrix_l[i-1][j+r]
+
+
+
