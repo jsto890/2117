@@ -34,13 +34,18 @@ class LUSolver(object):
             self.vector_b = np.array(b)
 
     def lu_factors(self):
+
+        # define the size of the input matrix A
         n = math.sqrt(self.matrix_a.size)
+        # Turn value into an integer
         n = int(n)
+        # Create the identity matrix of the same size as matrix A
         self.matrix_l = np.eye(n)
 
+        # Set the U matrix as a copy of the matrix A
         self.matrix_u = self.matrix_a
 
-        # Reduce the matrices
+        # Reduce the matrix using gaussian elimination
         for r in range(1, n):
             m = r
             for i in range(m, n):
