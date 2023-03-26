@@ -30,3 +30,16 @@ class LUSolver(object):
                 value = float(file.readline().strip())
                 b.append(value)
             self.vector_b = np.array(b)
+
+    def lu_factors(self):
+        n = sqrt(length(self.matrix_a))
+        self.matrix_l = np.eye(n)
+
+        self.matrix_u = self.matrix_a
+
+        # Reduce the matrix
+        for r in range(0, n-2):
+            for i in range(1, n-1):
+                for j in range(0, n):
+                    self.matrix_u[i][j+r] = self.matrix_u[i][j+r] - (self.matrix_u[i][j+r]/self.matrix_u[i-1][j+r])*self.matrix_u[i-1][j+r]
+                    self.matrix_l[i][j+r] = self.matrix_l[i][j+r] - (self.matrix_u[i][j+r]/self.matrix_u[i-1][j+r])*self.matrix_l[i-1][j+r]
