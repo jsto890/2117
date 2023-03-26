@@ -32,12 +32,12 @@ class LUSolver(object):
             self.vector_b = np.array(b)
 
     def lu_factors(self):
-        n = sqrt(length(self.matrix_a))
+        n = self.matrix_a.size
         self.matrix_l = np.eye(n)
 
         self.matrix_u = self.matrix_a
 
-        # Reduce the matrix
+        # Reduce the matrices
         for r in range(0, n-2):
             for i in range(1, n-1):
                 for j in range(0, n):
