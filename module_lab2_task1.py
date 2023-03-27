@@ -57,12 +57,6 @@ class LUSolver(object):
         # Tests
         # print(self.matrix_u)
         # print(self.matrix_l)
-
-# For testing
-# A = LUSolver()
-# A.read_system_from_file(file_path='problem27.txt')
-# A.lu_factors()
-
     def forward_sub(self):
         # copying over the values from vector_b into vector_y, without later changing vector_b
         self.vector_y = np.copy(self.vector_b)
@@ -89,3 +83,17 @@ class LUSolver(object):
             k = 0
             # increase i
             i = i + 1
+            
+    def write_solution_to_file(self, file_path):
+        with open(file_path, 'w') as fp:
+            # Determine number of solutions
+            n = len(self.vector_x)
+            for i in range(n):
+                print(self.vector_x[i] + "\n", fp)
+
+
+# For testing
+# A = LUSolver()
+# A.read_system_from_file(file_path='problem27.txt')
+# A.lu_factors()
+
