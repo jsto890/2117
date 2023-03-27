@@ -63,3 +63,29 @@ class LUSolver(object):
 # A.read_system_from_file(file_path='problem27.txt')
 # A.lu_factors()
 
+    def forward_sub(self):
+        # copying over the values from vector_b into vector_y, without later changing vector_b
+        self.vector_y = np.copy(self.vector_b)
+        # finding the length/how many values are in vector_b
+        n = len(self.vector_b)
+
+        # initialising some indexing values to 0.
+        i = 0
+        k = 0
+        s = 0
+
+        # calculating what vector_y should equal to in each row.
+        while i < n:
+            while k < i:
+                m = (self.matrix_l[i][k])
+                s = m * self.vector_y[k] + s
+                # increase k
+                k = k + 1
+            # change vector_b values in vector_y, row i, into final vector_y values
+            self.vector_y[i] = self.vector_y[i] - s
+
+            # resetting all values to zero before repeating the loop
+            s = 0
+            k = 0
+            # increase i
+            i = i + 1
