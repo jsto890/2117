@@ -57,6 +57,13 @@ class LUSolver(object):
         # Tests
         # print(self.matrix_u)
         # print(self.matrix_l)
+    def write_solution_to_file(self, file_path):
+        with open(file_path, 'w') as fp:
+            # Determine number of solutions
+            n = len(self.vector_x)
+            for i in range(n):
+                print(self.vector_x[i] + "\n", fp)
+
 
 # For testing
 # A = LUSolver()
