@@ -15,6 +15,15 @@ class LUSolver(object):
         self.vector_y = None
 
     def read_system_from_file(self, file_path):
+        """
+        Read a linear system of equations from a text file and store the matrix A and vector b.
+
+        Args:
+            file_path (str): Path to the text file
+
+        Return:
+            None
+            """
         with open(file_path, 'r') as file:
             # read number of unknowns
             n = int(file.readline().strip())
