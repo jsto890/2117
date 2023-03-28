@@ -52,7 +52,7 @@ class LUSolver(object):
 
         Returns
         _______
-        No Returns
+        No returns.
 
         Notes
         _____
@@ -79,7 +79,21 @@ class LUSolver(object):
                 for j in range(m-1, n):
                     self.matrix_u[i][j] = self.matrix_u[i][j] - multiplier*self.matrix_u[m-1][j]
 
+        # Tests
+        # print(self.matrix_u)
+        # print(self.matrix_l)
+
     def forward_sub(self):
+        """
+        method 1.3, forward_sub will use forward substitution to solve each line of vector_y
+        using each line of matrix_l. It will then update vector_y with the results.
+
+        Arguments:
+            No arguments
+
+        Returns:
+            no returns
+        """
         # copying over the values from vector_b into vector_y, without later changing vector_b
         self.vector_y = np.copy(self.vector_b)
         # finding the length/how many values are in vector_b
@@ -105,6 +119,21 @@ class LUSolver(object):
             k = 0
             # increase i
             i = i + 1
+
+    def backward_sub(self):
+
+        n = len(self.vector_b)
+        self.vector_x = np.zeros(n)
+
+        for i in range(n - 1, -1, -1):
+            rhs = self.vector_b[i]
+            for k in range(n - 1, -1, -1):
+                array_value = self.matrix_u[i][k]
+                rhs = rhs - array_value * self.vector_x[k]
+                k -= 1
+            self.vector_x[i] = rhs / (self.matrix_u[i][i])
+            i -= 1
+
             
     def write_solution_to_file(self, file_path):
         with open(file_path, 'w') as fp:
@@ -118,4 +147,7 @@ class LUSolver(object):
 # A = LUSolver()
 # A.read_system_from_file(file_path='problem27.txt')
 # A.lu_factors()
+# print(A.matrix_u)
+# print(A.matrix_l)
+
 

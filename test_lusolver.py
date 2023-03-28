@@ -23,3 +23,45 @@ class TestLUSolver(unittest.TestCase):
         print(solver.vector_b)
         print(expected_b)
         print(test2)
+
+# ----------------------------------------------------------------------------------
+    def test1_forward_sub(self):
+        solve = LUSolver()
+        solve.read_system_from_file('problem27.txt')
+        solve.lu_factors()
+        solve.forward_sub()
+
+        solve.vector_y == ([101, 58, 28, 42])
+        assert all(solve.vector_y) == all([101, 58, 28, 42])
+
+    def test2_forward_sub(self):
+        solve = LUSolver()
+        solve.read_system_from_file('problem0.txt')
+        solve.lu_factors()
+        solve.forward_sub()
+
+        solve.vector_y == np.array([-5, 0, -2])
+        assert all(solve.vector_y) == all([-5, 0, -2])
+# ----------------------------------------------------------------------------------
+    def test_lu_factors(self):
+        A = LUSolver()
+        A.read_system_from_file(file_path='problem27.txt')
+        A.lu_factors()
+
+        l = str(A.matrix_l)
+        u = str(A.matrix_u)
+
+        assert(u == str(np.array([[5., 2., 8., 3.], [0., 1., 5., 3.], [0., 0., 2., 2.], [0., 0., 0., 6.]])) and l ==
+               str(np.array([[1., 0., 0., 0.], [1., 1., 0., 0.], [3., 5., 1., 0.], [2., 1., 3., 1.]])))
+
+
+    def test_backward_sub(self):
+        solver = LUSolver()
+        solver.read_system_from_file('problem0.txt')
+        solver.lu_factors()
+        solver.forward_sub()
+        solver.backward_sub()
+        print(solver.vector_x)
+        assert (all(solver.vector_x) == all([-2, 4, 1]))
+
+
