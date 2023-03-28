@@ -43,7 +43,7 @@ class LUSolver(object):
 
         Returns
         _______
-        No Returns
+        No returns.
 
         Notes
         _____

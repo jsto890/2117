@@ -23,3 +23,6 @@ class TestLUSolver(unittest.TestCase):
         print(solver.vector_b)
         print(expected_b)
         print(test2)
+
+    def test_lu_factors(self):
+        problem =
