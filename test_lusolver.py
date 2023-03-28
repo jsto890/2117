@@ -87,12 +87,8 @@ class TestLUSolver(unittest.TestCase):
         solver.forward_sub()
         solver.backward_sub()
         solver.write_solution_to_file("method5_test.txt")
-        n = len(solver.vector_x)
-        with open("method5_test.txt", 'r') as fp:
-            string_read = np.zeros(n + 1)
-            for i in range(n):
-                string_read[i] = fp.readline()
-        assert all(string_read) == all([-2, 4, 1, 0])
+        value_string = np.loadtxt("method5_test.txt")
+        assert all(value_string) == all([-2, 4, 1, None])
 
 
 
