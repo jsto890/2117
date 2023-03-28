@@ -89,16 +89,16 @@ class TestLUSolver(unittest.TestCase):
         solver.write_solution_to_file("method5_test.txt")
         n = len(solver.vector_x)
         with open("method5_test.txt", 'r') as fp:
-            string_read = np.zeros(n)
+            string_read = np.zeros(n + 1)
             for i in range(n):
-                string_read[i] = fp.readline().strip()
-        assert all(string_read) == all([-2, 4, 1])
+                string_read[i] = fp.readline()
+        assert all(string_read) == all([-2, 4, 1, 0])
 
     #    with open("method5_test.txt", 'r') as fp:
-    #        string_read = np.zeros(n)
+    #        string_read = np.zeros(n+1)
     #        for i in range(n):
-    #            string_read[i] = fp.readline().strip()
-    #    var = string_read == np.array([-2, 4, 1])
+    #            string_read[i] = fp.readline()
+    #    var = string_read == np.array([-2, 4, 1, 0])
     #    assert all(var)
 
 
