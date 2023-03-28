@@ -61,7 +61,13 @@ class TestLUSolver(unittest.TestCase):
         solver.lu_factors()
         solver.forward_sub()
         solver.backward_sub()
-        print(solver.vector_x)
         assert (all(solver.vector_x) == all([-2, 4, 1]))
+
+    def test_write_solution_to_file
+        solver = LUSolver()
+        solver.read_system_from_file('problem0.txt')
+        solver.lu_factors()
+        solver.forward_sub()
+        solver.backward_sub()
 
 
