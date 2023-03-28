@@ -34,3 +34,15 @@ class TestLUSolver(unittest.TestCase):
 
         assert(u == str(np.array([[5., 2., 8., 3.], [0., 1., 5., 3.], [0., 0., 2., 2.], [0., 0., 0., 6.]])) and l ==
                str(np.array([[1., 0., 0., 0.], [1., 1., 0., 0.], [3., 5., 1., 0.], [2., 1., 3., 1.]])))
+
+
+    def test_backward_sub(self):
+        solver = LUSolver()
+        solver.read_system_from_file('problem0.txt')
+        solver.lu_factors()
+        solver.forward_sub()
+        solver.backward_sub()
+        print(solver.vector_x)
+        assert (all(solver.vector_x) == all([-2, 4, 1]))
+
+

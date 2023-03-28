@@ -102,17 +102,13 @@ class LUSolver(object):
         n = len(self.vector_b)
         self.vector_x = np.zeros(n)
 
-        i = n - 1
-
-        while i <= 0:
-            k = n - 1
-            divisor = self.matrix_u[i][i]
+        for i in range(n - 1, -1, -1):
             rhs = self.vector_b[i]
-            while k <= 0:
+            for k in range(n - 1, -1, -1):
                 array_value = self.matrix_u[i][k]
                 rhs = rhs - array_value * self.vector_x[k]
                 k -= 1
-            self.vector_x[i] = rhs / divisor
+            self.vector_x[i] = rhs / (self.matrix_u[i][i])
             i -= 1
 
             
