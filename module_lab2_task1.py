@@ -122,18 +122,11 @@ class LUSolver(object):
             i = i + 1
 
     def backward_sub(self):
-
-        n = len(self.vector_b)
-        self.vector_x = np.zeros(n)
-
-        for i in range(n - 1, -1, -1):
-            rhs = self.vector_b[i]
-            for k in range(n - 1, -1, -1):
-                array_value = self.matrix_u[i][k]
-                rhs = rhs - array_value * self.vector_x[k]
-                k -= 1
-            self.vector_x[i] = rhs / (self.matrix_u[i][i])
-            i -= 1
+        """
+        Completes the backwards substitution to find vector x from the U matrix factor and the vector b
+        """
+        # Find the dimension of the b vector and u matrix
+        self.vector_x = np.linalg.tensorsolve(self.matrix_u, self.vector_y)
 
     def write_solution_to_file(self, file_path):
         with open(file_path, 'w') as fp:
@@ -141,7 +134,7 @@ class LUSolver(object):
             n = len(self.vector_x)
             for i in range(n):
                 value = str(self.vector_x[i])
-                fp.write(value + "\n")
+                fp.write(value + '\n')
 
 # For testing
 # A = LUSolver()

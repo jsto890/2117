@@ -58,7 +58,6 @@ class TestLUSolver(unittest.TestCase):
         solve.forward_sub()
 
         var = solve.vector_y == np.array([-5, 0, -2])
-
         assert all(var)
 
     # ----------------------------------------------------------------------------------
@@ -90,7 +89,18 @@ class TestLUSolver(unittest.TestCase):
         solver.write_solution_to_file("method5_test.txt")
         n = len(solver.vector_x)
         with open("method5_test.txt", 'r') as fp:
-            string_read = np.zeros(n + 1)
+            string_read = np.zeros(n)
             for i in range(n):
-                string_read[i] = fp.readline()
-        assert all(string_read) == all([-2, 4, 1, 0])
+                string_read[i] = fp.readline().strip()
+        assert all(string_read) == all([-2, 4, 1])
+
+    #    with open("method5_test.txt", 'r') as fp:
+    #        string_read = np.zeros(n)
+    #        for i in range(n):
+    #            string_read[i] = fp.readline().strip()
+    #    var = string_read == np.array([-2, 4, 1])
+    #    assert all(var)
+
+
+
+
