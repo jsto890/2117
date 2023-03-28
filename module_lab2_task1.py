@@ -106,7 +106,10 @@ class LUSolver(object):
 
 
 # For testing
-# A = LUSolver()
-# A.read_system_from_file(file_path='problem27.txt')
-# A.lu_factors()
+A = LUSolver()
+A.read_system_from_file(file_path='problem27.txt')
+A.lu_factors()
+print(A.matrix_u)
+print(A.matrix_l)
+
 
