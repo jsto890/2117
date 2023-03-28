@@ -19,7 +19,7 @@ class LUSolver(object):
         Read a linear system of equations from a text file and store the matrix A and vector b.
 
         Args:
-            file_path (str): Path to the text file
+            file_path (str): Path to the text file.
 
         Return:
             None
