@@ -2,6 +2,7 @@ import numpy as np
 import math
 import zipfile
 
+
 # additional imports here
 
 
@@ -74,10 +75,10 @@ class LUSolver(object):
         for r in range(1, n):
             m = r
             for i in range(m, n):
-                multiplier = self.matrix_u[i][r-1] / self.matrix_u[m-1][r-1]
-                self.matrix_l[i][r-1] = multiplier
-                for j in range(m-1, n):
-                    self.matrix_u[i][j] = self.matrix_u[i][j] - multiplier*self.matrix_u[m-1][j]
+                multiplier = self.matrix_u[i][r - 1] / self.matrix_u[m - 1][r - 1]
+                self.matrix_l[i][r - 1] = multiplier
+                for j in range(m - 1, n):
+                    self.matrix_u[i][j] = self.matrix_u[i][j] - multiplier * self.matrix_u[m - 1][j]
 
         # Tests
         # print(self.matrix_u)
@@ -134,7 +135,6 @@ class LUSolver(object):
             self.vector_x[i] = rhs / (self.matrix_u[i][i])
             i -= 1
 
-            
     def write_solution_to_file(self, file_path):
         with open(file_path, 'w') as fp:
             # Determine number of solutions
@@ -142,12 +142,9 @@ class LUSolver(object):
             for i in range(n):
                 print(self.vector_x[i] + "\n", fp)
 
-
 # For testing
 # A = LUSolver()
 # A.read_system_from_file(file_path='problem27.txt')
 # A.lu_factors()
 # print(A.matrix_u)
 # print(A.matrix_l)
-
-
