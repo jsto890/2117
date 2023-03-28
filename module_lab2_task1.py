@@ -34,6 +34,22 @@ class LUSolver(object):
             self.vector_b = np.array(b)
 
     def lu_factors(self):
+        """
+        This method reduces the l and u matrices using gaussian elimination.
+
+        Arguments
+        _________
+        No arguments.
+
+        Returns
+        _______
+        No returns.
+
+        Notes
+        _____
+        Note this method creates the l and u matrices and then solves for their particular uses,
+        so it makes sense there are no inputs or outputs.
+        """
 
         # define the size of the input matrix A
         n = math.sqrt(self.matrix_a.size)
@@ -64,10 +80,10 @@ class LUSolver(object):
         using each line of matrix_l. It will then update vector_y with the results.
 
         Arguments:
-            None
+            No arguments
 
         Returns:
-            None
+            no returns
         """
         # copying over the values from vector_b into vector_y, without later changing vector_b
         self.vector_y = np.copy(self.vector_b)
@@ -94,6 +110,25 @@ class LUSolver(object):
             k = 0
             # increase i
             i = i + 1
+
+    def backward_sub(self):
+
+        n = len(self.vector_b)
+        self.vector_x = np.zeros(n)
+
+        i = n - 1
+
+        while i <= 0:
+            k = n - 1
+            divisor = self.matrix_u[i][i]
+            rhs = self.vector_b[i]
+            while k <= 0:
+                array_value = self.matrix_u[i][k]
+                rhs = rhs - array_value * self.vector_x[k]
+                k -= 1
+            self.vector_x[i] = rhs / divisor
+            i -= 1
+
             
     def write_solution_to_file(self, file_path):
         with open(file_path, 'w') as fp:
@@ -107,4 +142,7 @@ class LUSolver(object):
 # A = LUSolver()
 # A.read_system_from_file(file_path='problem27.txt')
 # A.lu_factors()
+# print(A.matrix_u)
+# print(A.matrix_l)
+
 

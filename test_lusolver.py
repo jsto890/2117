@@ -25,7 +25,6 @@ class TestLUSolver(unittest.TestCase):
         print(test2)
 
 # ----------------------------------------------------------------------------------
-# unit tests for forward_sub:
     def test1_forward_sub(self):
         solve = LUSolver()
         solve.read_system_from_file('problem27.txt')
@@ -44,3 +43,13 @@ class TestLUSolver(unittest.TestCase):
         solve.vector_y == np.array([-5, 0, -2])
         assert all(solve.vector_y) == all([-5, 0, -2])
 # ----------------------------------------------------------------------------------
+    def test_lu_factors(self):
+        A = LUSolver()
+        A.read_system_from_file(file_path='problem27.txt')
+        A.lu_factors()
+
+        l = str(A.matrix_l)
+        u = str(A.matrix_u)
+
+        assert(u == str(np.array([[5., 2., 8., 3.], [0., 1., 5., 3.], [0., 0., 2., 2.], [0., 0., 0., 6.]])) and l ==
+               str(np.array([[1., 0., 0., 0.], [1., 1., 0., 0.], [3., 5., 1., 0.], [2., 1., 3., 1.]])))
