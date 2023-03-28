@@ -24,6 +24,23 @@ class TestLUSolver(unittest.TestCase):
         print(expected_b)
         print(test2)
 
+        solver = LUSolver()
+        solver.read_system_from_file('problem27.txt')
+
+        # check that matrix A was read correctly
+        expected_a = np.array([[5, 2, 8, 3], [5, 3, 13, 6], [15, 11, 51, 26], [10, 5, 27, 21]])
+        test1 = solver.matrix_a == expected_a
+        print(solver.matrix_a)
+        print(expected_a)
+        print(test1)
+
+        # check that vector b was read correctly
+        expected_b = np.array([101, 159, 621, 386])
+        test2 = solver.vector_b == expected_b
+        print(solver.vector_b)
+        print(expected_b)
+        print(test2)
+
 # ----------------------------------------------------------------------------------
     def test1_forward_sub(self):
         solve = LUSolver()
