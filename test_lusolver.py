@@ -63,11 +63,19 @@ class TestLUSolver(unittest.TestCase):
         solver.backward_sub()
         assert (all(solver.vector_x) == all([-2, 4, 1]))
 
-    def test_write_solution_to_file
+    def test_write_solution_to_file(self):
         solver = LUSolver()
         solver.read_system_from_file('problem0.txt')
         solver.lu_factors()
         solver.forward_sub()
         solver.backward_sub()
+        solver.write_solution_to_file("method5_test.txt")
+        with open("method5_test.txt", 'r') as fp:
+            string_read = np.zeros(len(solver.vector_x) + 1)
+            for i in range(len(solver.vector_x)):
+                string_read[i] = float(fp.readline())
+        assert all(string_read) == all([-2, 4, 1, 0])
+
+
 
 

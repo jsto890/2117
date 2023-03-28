@@ -131,7 +131,8 @@ class LUSolver(object):
             # Determine number of solutions
             n = len(self.vector_x)
             for i in range(n):
-                print(self.vector_x[i] + "\n", fp)
+                value = str(self.vector_x[i])
+                fp.write(value + "\n")
 
 
 # For testing
