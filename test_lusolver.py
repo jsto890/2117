@@ -49,10 +49,7 @@ class TestLUSolver(unittest.TestCase):
         solve.forward_sub()
 
         var = solve.vector_y == np.array([101, 58, 28, 42])
-        print("\n\n ", var, "\n \n ")
-
         assert all(var)
-        print("\n\n ", var, "\n \n ")
 
     def test2_forward_sub(self):
         solve = LUSolver()
