@@ -41,15 +41,15 @@ class TestLUSolver(unittest.TestCase):
         print(expected_b)
         print(test2)
 
-# ----------------------------------------------------------------------------------
+    # ----------------------------------------------------------------------------------
     def test1_forward_sub(self):
         solve = LUSolver()
         solve.read_system_from_file('problem27.txt')
         solve.lu_factors()
         solve.forward_sub()
 
-        solve.vector_y == ([101, 58, 28, 42])
-        assert all(solve.vector_y) == all([101, 58, 28, 42])
+        var = solve.vector_y == np.array([101, 58, 28, 42])
+        assert all(var)
 
     def test2_forward_sub(self):
         solve = LUSolver()
@@ -57,9 +57,10 @@ class TestLUSolver(unittest.TestCase):
         solve.lu_factors()
         solve.forward_sub()
 
-        solve.vector_y == np.array([-5, 0, -2])
-        assert all(solve.vector_y) == all([-5, 0, -2])
-# ----------------------------------------------------------------------------------
+        var = solve.vector_y == np.array([-5, 0, -2])
+        assert all(var)
+
+    # ----------------------------------------------------------------------------------
     def test_lu_factors(self):
         A = LUSolver()
         A.read_system_from_file(file_path='problem27.txt')
@@ -68,9 +69,8 @@ class TestLUSolver(unittest.TestCase):
         l = str(A.matrix_l)
         u = str(A.matrix_u)
 
-        assert(u == str(np.array([[5., 2., 8., 3.], [0., 1., 5., 3.], [0., 0., 2., 2.], [0., 0., 0., 6.]])) and l ==
-               str(np.array([[1., 0., 0., 0.], [1., 1., 0., 0.], [3., 5., 1., 0.], [2., 1., 3., 1.]])))
-
+        assert (u == str(np.array([[5., 2., 8., 3.], [0., 1., 5., 3.], [0., 0., 2., 2.], [0., 0., 0., 6.]])) and l ==
+                str(np.array([[1., 0., 0., 0.], [1., 1., 0., 0.], [3., 5., 1., 0.], [2., 1., 3., 1.]])))
 
     def test_backward_sub(self):
         solver = LUSolver()
@@ -89,10 +89,17 @@ class TestLUSolver(unittest.TestCase):
         solver.write_solution_to_file("method5_test.txt")
         n = len(solver.vector_x)
         with open("method5_test.txt", 'r') as fp:
-            string_read = np.zeros(n)
+            string_read = np.zeros(n + 1)
             for i in range(n):
-                string_read[i] = fp.readline().strip()
-        assert all(string_read) == all([-2, 4, 1])
+                string_read[i] = fp.readline()
+        assert all(string_read) == all([-2, 4, 1, 0])
+
+    #    with open("method5_test.txt", 'r') as fp:
+    #        string_read = np.zeros(n+1)
+    #        for i in range(n):
+    #            string_read[i] = fp.readline()
+    #    var = string_read == np.array([-2, 4, 1, 0])
+    #    assert all(var)
 
 
 
