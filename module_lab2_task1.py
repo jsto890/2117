@@ -96,6 +96,25 @@ class LUSolver(object):
             k = 0
             # increase i
             i = i + 1
+
+    def backward_sub(self):
+
+        n = len(self.vector_b)
+        self.vector_x = np.zeros(n)
+
+        i = n - 1
+
+        while i <= 0:
+            k = n - 1
+            divisor = self.matrix_u[i][i]
+            rhs = self.vector_b[i]
+            while k <= 0:
+                array_value = self.matrix_u[i][k]
+                rhs = rhs - array_value * self.vector_x[k]
+                k -= 1
+            self.vector_x[i] = rhs / divisor
+            i -= 1
+
             
     def write_solution_to_file(self, file_path):
         with open(file_path, 'w') as fp:
