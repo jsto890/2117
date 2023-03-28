@@ -70,7 +70,21 @@ class LUSolver(object):
                 for j in range(m-1, n):
                     self.matrix_u[i][j] = self.matrix_u[i][j] - multiplier*self.matrix_u[m-1][j]
 
+        # Tests
+        # print(self.matrix_u)
+        # print(self.matrix_l)
+
     def forward_sub(self):
+        """
+        method 1.3, forward_sub will use forward substitution to solve each line of vector_y
+        using each line of matrix_l. It will then update vector_y with the results.
+
+        Arguments:
+            No arguments
+
+        Returns:
+            no returns
+        """
         # copying over the values from vector_b into vector_y, without later changing vector_b
         self.vector_y = np.copy(self.vector_b)
         # finding the length/how many values are in vector_b
@@ -121,10 +135,10 @@ class LUSolver(object):
 
 
 # For testing
-A = LUSolver()
-A.read_system_from_file(file_path='problem27.txt')
-A.lu_factors()
-print(A.matrix_u)
-print(A.matrix_l)
+# A = LUSolver()
+# A.read_system_from_file(file_path='problem27.txt')
+# A.lu_factors()
+# print(A.matrix_u)
+# print(A.matrix_l)
 
 
