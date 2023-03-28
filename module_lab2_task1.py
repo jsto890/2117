@@ -34,6 +34,22 @@ class LUSolver(object):
             self.vector_b = np.array(b)
 
     def lu_factors(self):
+        """
+        This method reduces the l and u matrices using gaussian elimination.
+
+        Arguments
+        _________
+        No arguments.
+
+        Returns
+        _______
+        No Returns
+
+        Notes
+        _____
+        Note this method creates the l and u matrices and then solves for their particular uses,
+        so it makes sense there are no inputs or outputs.
+        """
 
         # define the size of the input matrix A
         n = math.sqrt(self.matrix_a.size)
@@ -54,9 +70,6 @@ class LUSolver(object):
                 for j in range(m-1, n):
                     self.matrix_u[i][j] = self.matrix_u[i][j] - multiplier*self.matrix_u[m-1][j]
 
-        # Tests
-        # print(self.matrix_u)
-        # print(self.matrix_l)
     def forward_sub(self):
         # copying over the values from vector_b into vector_y, without later changing vector_b
         self.vector_y = np.copy(self.vector_b)
