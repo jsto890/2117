@@ -125,22 +125,13 @@ class LUSolver(object):
         """
         Completes the backwards substitution to find vector x from the U matrix factor and the vector b
         """
-        # computes x
+        # Find the dimension of the b vector and u matrix
         self.vector_x = np.linalg.tensorsolve(self.matrix_u, self.vector_y)
 
     def write_solution_to_file(self, file_path):
-        """
-        Writes the x vector solution to a file
-
-        Arguments
-        ---------
-        file_path : str
-            Path to the file to write the solution in
-        """
         with open(file_path, 'w') as fp:
             # Determine number of solutions
             n = len(self.vector_x)
-            # Copy the vector into the test file, one line at a time
             for i in range(n):
                 value = str(self.vector_x[i])
                 fp.write(value + '\n')
