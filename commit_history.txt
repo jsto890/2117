@@ -1,0 +1,310 @@
+commit 4b39830ca9907da1febb3107215e5ab10f223ea7
+Author: afos743 <afos743@aucklanduni.ac.nz>
+Date:   Wed Mar 29 09:51:38 2023 +1300
+
+    Re-added problems file with all the solutions
+
+commit b15d0d843c2f7f3b6c008d3d215df84af54742f0
+Author: afos743 <afos743@aucklanduni.ac.nz>
+Date:   Wed Mar 29 09:49:53 2023 +1300
+
+    Wrote the 100 solution file
+
+commit b9abbfd33ddbae9ea9a8362785cc9ed174c37f99
+Author: afos743 <afos743@aucklanduni.ac.nz>
+Date:   Wed Mar 29 09:42:35 2023 +1300
+
+    Adding the problems file
+
+commit 08b7cc61669a3a79c2312271339d9c48f57e9124
+Author: ljay300 <ljay300@aucklanduni.ac.nz>
+Date:   Wed Mar 29 05:31:22 2023 +1300
+
+    fixing accidental changes on 1.5
+
+commit f6bc4647f381c9b940921e7e1283431ed8565bcb
+Merge: a776667 815920c
+Author: ljay300 <ljay300@aucklanduni.ac.nz>
+Date:   Wed Mar 29 03:46:11 2023 +1300
+
+    commented solution(?) on 1.5
+
+commit a776667565696a7d6230f54d93c518854f70fcaa
+Author: ljay300 <ljay300@aucklanduni.ac.nz>
+Date:   Wed Mar 29 03:20:52 2023 +1300
+
+    cleaning up 1.3 test code
+
+commit d3a23daaaa1d63b5253d31d32e38a8e39247caf5
+Author: ljay300 <ljay300@aucklanduni.ac.nz>
+Date:   Wed Mar 29 03:19:22 2023 +1300
+
+    fixing 1.3 test code
+
+commit 815920c13943f56c4b75f8ba2a5c23e852d56f7c
+Author: angusedwards <anguse.2003@gmail.com>
+Date:   Tue Mar 28 22:10:43 2023 +1300
+
+    Fixed 1.4, fixed tests for 1.4 and 1.5, added some comments
+
+commit 7469db92178db82666b05af8eee9294abcaecf8b
+Author: angusedwards <anguse.2003@gmail.com>
+Date:   Tue Mar 28 22:10:36 2023 +1300
+
+    Fixed 1.4, fixed tests for 1.4 and 1.5, added some comments
+
+commit 7f1c58c3647ffbf1b79243502dc3640d0d2903cf
+Author: angusedwards <anguse.2003@gmail.com>
+Date:   Tue Mar 28 21:32:19 2023 +1300
+
+    New 1.5 test with different file reading approach, needs checking
+
+commit b1984c30b5da179a852dbf34c9ea6e0582593a6e
+Merge: c87e3f2 1518652
+Author: angusedwards <anguse.2003@gmail.com>
+Date:   Tue Mar 28 20:54:18 2023 +1300
+
+    Merge branch 'master' of https://github.com/jsto890/2117
+
+commit c87e3f22276e3a7b4d3ad5f8d9db85edd00c8ddc
+Author: angusedwards <anguse.2003@gmail.com>
+Date:   Tue Mar 28 20:54:00 2023 +1300
+
+    Amended 1.5 test, needs checking
+
+commit 1518652dce26f04d1bfcaeb0c2f76151cde78963
+Author: josephstorey <jsto890@github.com>
+Date:   Tue Mar 28 20:51:50 2023 +1300
+
+    new test for 1.1 using problem 27
+
+commit 653fb13e748242e5c9d5f5e42d7fdc9bd43f5e9a
+Author: angusedwards <anguse.2003@gmail.com>
+Date:   Tue Mar 28 20:49:05 2023 +1300
+
+    Completed 1.5 test and fixed 1.5 file writing
+
+commit c85946f0eaffc668d5bcbdc7d0728c27bc76af23
+Author: josephstorey <jsto890@github.com>
+Date:   Tue Mar 28 20:44:01 2023 +1300
+
+    new docstring for 1.1
+
+commit b3ce7ab51f7f458e3f09a2dc1832e23ed730e64f
+Merge: 51abc58 1fbf27f
+Author: josephstorey <jsto890@github.com>
+Date:   Tue Mar 28 20:43:08 2023 +1300
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 51abc58df143f3304d707ef3842418a9711ed378
+Author: josephstorey <jsto890@github.com>
+Date:   Tue Mar 28 20:42:42 2023 +1300
+
+    new docstring for 1.1
+
+commit e47ff4bb259801cf904c4013968b13d243329663
+Author: angusedwards <anguse.2003@gmail.com>
+Date:   Tue Mar 28 20:02:03 2023 +1300
+
+    Fixed back sub test and added base of write solution test
+
+commit 1fbf27fdb70502c5725a6fff537dc4c5c2b128ff
+Merge: 8be9749 c31b298
+Author: angusedwards <anguse.2003@gmail.com>
+Date:   Tue Mar 28 19:09:10 2023 +1300
+
+    Merge branch 'master' of https://github.com/jsto890/2117
+
+commit 8be974972745b53f2cf5fc59b33ae04058bc605f
+Author: angusedwards <anguse.2003@gmail.com>
+Date:   Tue Mar 28 19:07:35 2023 +1300
+
+    Fixed 1.4 where while loops weren't functioning as intended, still needs docstring, added tester for back sub
+
+commit c31b29842d7d701e1b8dd543ca08fa5674b6cda0
+Author: ljay300 <128174153+ljay300@users.noreply.github.com>
+Date:   Tue Mar 28 18:38:24 2023 +1300
+
+    Delete test_forward_sub.py
+
+commit aacce79ea6987536681b59c14846179de943b235
+Merge: a2778b3 ae62d4f
+Author: ljay300 <ljay300@aucklanduni.ac.nz>
+Date:   Tue Mar 28 18:35:51 2023 +1300
+
+    resolved conflicts
+
+commit a2778b3e74190b330aa2d092e01819322120e1db
+Author: ljay300 <ljay300@aucklanduni.ac.nz>
+Date:   Tue Mar 28 18:27:37 2023 +1300
+
+    adding tests to test_lusolver & docstrings to forward_sub
+
+commit ae62d4f47aacc539aaabdda32647b980631dd9b7
+Author: afos743 <afos743@aucklanduni.ac.nz>
+Date:   Tue Mar 28 18:23:36 2023 +1300
+
+    Commented tests out at the bottom.
+
+commit d099017d7a74dbce0a2a609ebc9dc20b63cea5c8
+Merge: b10b666 d297301
+Author: afos743 <afos743@aucklanduni.ac.nz>
+Date:   Tue Mar 28 18:22:06 2023 +1300
+
+    Merge remote-tracking branch 'origin/master'
+
+commit b10b6668e833777c3aa5bd45cad9486cbf372c68
+Author: afos743 <afos743@aucklanduni.ac.nz>
+Date:   Tue Mar 28 18:21:47 2023 +1300
+
+    Finished my Test and Comments for 1.2
+
+commit d29730130464e6cc5af7c1139e13f108984571cb
+Merge: 5ea80b8 6d24f49
+Author: angusedwards <anguse.2003@gmail.com>
+Date:   Tue Mar 28 18:20:05 2023 +1300
+
+    Merge branch 'master' of https://github.com/jsto890/2117
+
+commit 6d24f494aa3efab87c96e24c3d933cf9f11bffd3
+Author: afos743 <afos743@aucklanduni.ac.nz>
+Date:   Tue Mar 28 17:48:46 2023 +1300
+
+    Slight edits
+
+commit 5eacfeaf62ab81e160a01b9bb3f589b9550ef8ee
+Author: afos743 <afos743@aucklanduni.ac.nz>
+Date:   Tue Mar 28 17:31:55 2023 +1300
+
+    Added the doc string for method 2.
+
+commit 5ea80b8a9e55ac594573bd0cb5efb03e01ba6925
+Author: angusedwards <anguse.2003@gmail.com>
+Date:   Tue Mar 28 16:05:25 2023 +1300
+
+    Task 1.4 complete, needs testing and commenting
+
+commit d1a4d162b3bbf7a07ab7f7af176b79e04dd3ffb6
+Merge: 1e4ede8 000b897
+Author: ljay300 <ljay300@aucklanduni.ac.nz>
+Date:   Tue Mar 28 12:17:50 2023 +1300
+
+    committing after 1.5 merged
+
+commit 1e4ede837b9f0fa2d98945f88a0bcafe225ba594
+Author: ljay300 <ljay300@aucklanduni.ac.nz>
+Date:   Tue Mar 28 11:51:53 2023 +1300
+
+    task 1.3 completed
+
+commit 000b89771467d7ba2e806b288371d309f7681a36
+Author: angusedwards <anguse.2003@gmail.com>
+Date:   Tue Mar 28 11:30:43 2023 +1300
+
+    Added 1.5, needs testing
+
+commit 9e31a0008e1a5d9c58470bc478a70c6cab52bdcf
+Author: afos743 <afos743@aucklanduni.ac.nz>
+Date:   Sun Mar 26 23:05:05 2023 +1300
+
+    Final Comments added. Task 1.2 Finished.
+
+commit b2e029f6d3681ff03222521aa689ca079bf092d6
+Author: afos743 <afos743@aucklanduni.ac.nz>
+Date:   Sun Mar 26 23:01:47 2023 +1300
+
+    Ammended 1.2
+
+commit 88b34e804e688303ec869768d26d4f15ab6844ac
+Author: afos743 <afos743@aucklanduni.ac.nz>
+Date:   Sun Mar 26 21:24:12 2023 +1300
+
+    Changed 1.2 to a 3x nested for loop. Not finished
+
+commit 6fb76023f9096191d8520a6902617062f0bce4d4
+Author: afos743 <afos743@aucklanduni.ac.nz>
+Date:   Sun Mar 26 21:20:58 2023 +1300
+
+    Changed 1.2 to a 3x nested for loop. Not finished
+
+commit eb7e08a4bdbaa9149e4288dc00073d3c1acdf90e
+Author: afos743 <afos743@aucklanduni.ac.nz>
+Date:   Sun Mar 26 21:16:22 2023 +1300
+
+    Changed 1.2 to a 3x nested for loop. Not finished
+
+commit ec8c4f529071a0baa03668f72c666720f8369d7d
+Author: josephstorey <jsto890@github.com>
+Date:   Fri Mar 24 12:15:11 2023 +1300
+
+    new test script changes to see printed matrix and vector
+
+commit 34ed7a3f071dee4c8d92c77229892c7505d06775
+Author: josephstorey <jsto890@github.com>
+Date:   Fri Mar 24 11:30:10 2023 +1300
+
+    cleared script
+
+commit 4c32db9e95dab8dec3c935e2ea7cd96dbaa98d0e
+Author: josephstorey <jsto890@github.com>
+Date:   Fri Mar 24 11:29:03 2023 +1300
+
+    new python code
+
+commit a3649fbbd74a8b553240f4fabf34fe67a0301ab2
+Author: jsto890 <127268851+jsto890@users.noreply.github.com>
+Date:   Fri Mar 24 11:28:06 2023 +1300
+
+    Add files via upload
+
+commit 0f6a9845947b1b014976d1eaae9916e8c10a93b9
+Author: josephstorey <jsto890@github.com>
+Date:   Fri Mar 24 09:19:11 2023 +1300
+
+    new python code
+
+commit 7ce83880b5bde7862745424b847228e9e35fb65e
+Author: josephstorey <jsto890@github.com>
+Date:   Fri Mar 17 09:39:03 2023 +1300
+
+    deleted files
+
+commit 1ad8b7838b850a86d2ef511e8b557d43e6c9126b
+Author: jsto890 <127268851+jsto890@users.noreply.github.com>
+Date:   Fri Mar 17 09:31:01 2023 +1300
+
+    Add files via upload
+
+commit 08ca598b864a13bf0144cbb40ba083ff65feec37
+Merge: e3e365a def8190
+Author: jsto890 <127268851+jsto890@users.noreply.github.com>
+Date:   Fri Mar 17 09:26:14 2023 +1300
+
+    Merge pull request #1 from jsto890/problems
+    
+    Add files via upload
+
+commit def81900cc9d9d68a70169b7d4e16d184dfbc534
+Author: jsto890 <127268851+jsto890@users.noreply.github.com>
+Date:   Fri Mar 17 09:25:45 2023 +1300
+
+    Add files via upload
+
+commit e3e365a200129df99225f5bd3d0dc7b899964556
+Author: jsto890 <127268851+jsto890@users.noreply.github.com>
+Date:   Fri Mar 17 09:22:24 2023 +1300
+
+    Add files via upload
+
+commit 7bdca822c1fd2c1dc06d610b8210061bab62d7cc
+Author: jsto890 <127268851+jsto890@users.noreply.github.com>
+Date:   Fri Mar 17 09:21:46 2023 +1300
+
+    Create .gitignore
+
+commit 3799d7d3ed8c37eac4ebad25ddb3cc0edc6f5661
+Author: josephstorey <jsto890@github.com>
+Date:   Fri Mar 17 09:16:43 2023 +1300
+
+    new python code
